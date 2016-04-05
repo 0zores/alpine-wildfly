@@ -17,6 +17,6 @@ RUN apk update && \
     tar xzvf wildfly-$WILDFLY_VERSION.tar.gz && \
     cp -Rvf wildfly-$WILDFLY_VERSION/* $WILDFLY_HOME && \
     rm -rf wildfly-$WILDFLY_VERSION wildfly-$WILDFLY_VERSION.tar.gz && \
-    chmod +x bootstrap.sh 
+    chmod +x /bootstrap.sh 
 
 CMD ["/bootstrap.sh"]
