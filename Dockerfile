@@ -8,7 +8,7 @@ ENV WILDFLY_HOME /opt/wildfly
 ENV DOWNLOAD_LOCATION http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz
 
 ADD $DOWNLOAD_LOCATION $WILDFLY_HOME/wildfly-$WILDFLY_VERSION.tar.gz
-ADD bootstrap.sh $WILDFLY_HOME/bootstrap.sh
+ADD bootstrap.sh /bootstrap.sh
 
 WORKDIR $WILDFLY_HOME
 
@@ -19,4 +19,4 @@ RUN apk update && \
     rm -rf wildfly-$WILDFLY_VERSION wildfly-$WILDFLY_VERSION.tar.gz && \
     chmod +x bootstrap.sh 
 
-CMD ["/opt/wildfly/bootstrap.sh"]
+CMD ["/bootstrap.sh"]
